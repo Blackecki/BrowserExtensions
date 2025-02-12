@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Instaling Autofill",
+  "version": "1.1",
+  "description": "Automatyczne wstawianie tłumaczenia do pola odpowiedzi na Instaling.pl",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["https://instaling.pl/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://instaling.pl/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
